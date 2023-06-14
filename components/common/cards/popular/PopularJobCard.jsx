@@ -8,6 +8,7 @@ const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
       style={styles.container(selectedJob, item)}
       onPress={() => handleCardPress(item)}
     >
+      {/* Logo container */}
       <TouchableOpacity style={styles.logoContainer(selectedJob, item)}>
         <Image
           source={{
@@ -19,18 +20,25 @@ const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
           style={styles.logoImage}
         />
       </TouchableOpacity>
+
+      {/* Company name */}
       <Text style={styles.companyName} numberOfLines={1}>
         {item?.employer_name}
       </Text>
 
       <View style={styles.infoContainer}>
+        {/* Job name */}
         <Text style={styles.jobName(selectedJob, item)} numberOfLines={1}>
           {item?.job_title}
         </Text>
+
         <View style={styles.infoWrapper}>
+          {/* Job publisher */}
           <Text style={styles.publisher(selectedJob, item)}>
             {item?.job_publisher} -
           </Text>
+
+          {/* Job location */}
           <Text style={styles.location}> {item.job_country}</Text>
         </View>
       </View>

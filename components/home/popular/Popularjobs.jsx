@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { useRouter } from "expo-router"
 import {
   View,
@@ -14,10 +13,10 @@ import PopularJobCard from "../../common/cards/popular/PopularJobCard"
 import useFetch from "../../../hook/useFetch"
 
 const Popularjobs = () => {
-  const router = useRouter()
-  const { data, isLoading, error } = useFetch("search", {
-    query: "React developer",
-    num_pages: "1",
+  const router = useRouter();
+  const { data, isLoading, error } = useFetch('search', {
+    query: 'React developer',
+    num_pages: '1',
   })
 
   const [selectedJob, setSelectedJob] = useState()
