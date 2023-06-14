@@ -6,6 +6,7 @@ import {
   FlatList,
   ActivityIndicator,
 } from "react-native"
+import { useState } from "react"
 
 import styles from "./popularjobs.style"
 import { COLORS, SIZES } from "../../../constants"
