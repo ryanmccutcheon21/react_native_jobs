@@ -13,7 +13,7 @@ const Popularjobs = () => {
   // call api and get data using useFetch custom hook
   const { data, isLoading, error } = useFetch('search', {
     query: 'React developer',
-    num_pages: 1
+    num_pages: '1'
   })
 
   console.log(data)
