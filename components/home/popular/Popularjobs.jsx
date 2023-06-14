@@ -5,11 +5,18 @@ import { useRouter } from 'expo-router'
 import styles from './popularjobs.style'
 import { COLORS, SIZES } from '../../../constants'
 import PopularjobCard from '../../common/cards/popular/PopularJobCard'
+import useFetch from '../../../hook/useFetch'
 
 const Popularjobs = () => {
   const router = useRouter()
-  const isLoading = false
-  const error = false
+
+  // call api and get data using useFetch custom hook
+  const { data, isLoading, error } = useFetch('search', {
+    query: 'React developer',
+    num_pages: 1
+  })
+
+  console.log(data)
 
   return (
     <View style={styles.container}>
