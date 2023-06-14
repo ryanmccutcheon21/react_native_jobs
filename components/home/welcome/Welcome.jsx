@@ -15,6 +15,7 @@ import { icons, SIZES } from '../../../constants'
 const jobTypes = ['Full-time', 'Part-time', 'Contractor']
 
 const Welcome = () => {
+  // declare router
   const router = useRouter()
   const [activeJobType, setActiveJobType] = useState('Full-time')
 
@@ -24,8 +25,11 @@ const Welcome = () => {
         <Text style={styles.userName}>Hello Ryan</Text>
         <Text style={styles.welcomeMessage}>Find your perfect job</Text>
       </View>
+
+      {/* Search Container */}
       <View style={styles.searchContainer}>
         <View style={styles.searchWrapper}>
+          {/* Input Container */}
           <TextInput
             style={styles.searchInput}
             value=''
@@ -33,6 +37,8 @@ const Welcome = () => {
             placeholder='What are you looking for?'
           />
         </View>
+
+        {/* Search Icon Image Button */}
         <TouchableOpacity style={styles.searchBtn} onPress={() => { }}>
           <Image
             source={icons.search}
@@ -42,6 +48,7 @@ const Welcome = () => {
         </TouchableOpacity>
       </View>
 
+      {/* Horizontal list of job types below search container */}
       <View style={styles.tabsContainer}>
         <FlatList
           data={jobTypes}

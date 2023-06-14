@@ -21,11 +21,14 @@ const Popularjobs = () => {
       </View>
 
       <View style={styles.cardsContainer}>
+        {/* if loading, show loading icon */}
         {isLoading ? (
           <ActivityIndicator size='large' colors={COLORS.primary} />
+          // if error, show error message
         ) : error ? (
           <Text>Something went wrong.</Text>
         ) : (
+          // else show list of jobs in horizontal row
           <FlatList
             data={[1, 2, 3, 4]}
             renderItem={({ item }) => (
